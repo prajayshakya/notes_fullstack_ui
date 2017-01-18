@@ -1,0 +1,27 @@
+<html>
+    <title>ObjectLiteral_singleton</title>
+    <body>
+        <h4>Full Name</h4>
+        
+    </body>
+    
+    <script>
+        var employee = {
+            firstName: "prajay",
+            lastName: "shakya"
+        }
+        
+        var emp1 = employee;
+        var emp2 = employee;
+        document.write("Before change"+ "<br>");
+        document.write(emp1.firstName + emp1.lastName + "<br>");
+        document.write(emp2.firstName + emp2.lastName + "<br>" + "<br>");
+        
+        emp1.firstName = "changed";//change made to one instance effects entire instance
+        document.write("After change"+ "<br>");
+        document.write(emp1.firstName + emp1.lastName + "<br>");
+         document.write(emp2.firstName + emp2.lastName);
+        
+        //In object literal, if i change something, it changes in all script.
+    </script>
+</html>

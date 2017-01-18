@@ -1,0 +1,19 @@
+<html>
+    <title>Closure example</title>
+    <body>
+        <script>
+            var increment = function(){
+                var count = 0;
+                
+                return function(){
+                    return count++;
+                }
+               
+            }();
+                
+          
+        </script>
+        
+        <button onclick="alert(increment())">click me</button>
+    </body>
+</html>

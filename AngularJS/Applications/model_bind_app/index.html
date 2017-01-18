@@ -1,0 +1,50 @@
+<html ng-app="">
+    <title> ng-model and ng-bind example</title>
+    <header> Please fillout the following contents.</header>
+    
+    <div> First Name</div>
+    <div>
+        <input type="text" ng-model="fname">
+    </div>
+    <div>LastName</div>
+    <div>
+        <input type="text" ng-model="lname">
+    </div>
+    
+    <div> Street  </div>
+    <div>
+        <input type="text" ng-model="street">
+    </div>
+    <div> city</div>
+    <div>
+        <input type="text" ng-model="city">
+    </div>
+    <div> state</div>
+    <div>
+        <input type="text" ng-model="state">
+    </div>
+    
+      
+    <br><hr><br>
+    <div><h3>This is how its gonna display</h3></div>
+    <div> <h4>Customer Information</h4></div>
+    <div> 
+        <span ng-bind="fname"></span> , <span ng-bind="lname"></span>
+        <br>
+        <span ng-bind="street"></span>, <span ng-bind="city"></span>
+        <br>
+<!--        <span ng-bind="state"></span>-->
+        {{ state }}
+    </div>
+
+    
+    <br><hr><br>
+    <div ng-init ="country = [{name:'bangladesh', language:'bangla'}, {name:'zimbawe', language:'zimbawa'}]">
+    </div>
+    <li ng-repeat="countries in country">
+     {{ 'Country:' + countries.name + ' , ' + ' Language:'+ countries.language  }} 
+    </li>
+    
+    
+    <script type="text/javascript" src="/node_modules/angular/angular.js"></script>
+</html>

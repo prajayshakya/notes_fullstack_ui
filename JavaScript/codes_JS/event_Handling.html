@@ -1,0 +1,17 @@
+<input type="button" value="Click me" id="btn"/>
+<script type="text/javascript">
+    btn.addEventListener("mouseover", changeColorOnMouseOver, false);
+    btn.addEventListener("mouseout", changeColorOnMouseOut, false);
+
+    function changeColorOnMouseOver()
+    {
+        this.style.background = 'red';
+        this.style.color = 'yellow';
+    }
+
+    function changeColorOnMouseOut()
+    {
+        this.style.background = 'black';
+        this.style.color = 'white';
+    }
+</script>

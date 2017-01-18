@@ -1,0 +1,39 @@
+<html>
+    <title>Polymorphism_OverRiding</title>
+    
+    <script>
+        var shape = function(){}
+        shape.prototype.draw = function()
+        {
+            return "I am generic shape";
+        }
+        
+        var circle = function(){}
+        //inheritence 
+        circle.prototype = Object.create(shape.prototype);
+        //overriding draw method of circle
+        circle.prototype.draw = function()
+        {
+            return "I am circle shape";
+        }
+        
+        var square = function(){}
+        square.prototype = Object.create(shape.prototype);
+        square.prototype.draw = function()
+        {
+            return "I am square shape";
+        }
+        
+        //its going to display its parent. 
+        var triangle = function(){}
+        triangle.prototype = Object.create(shape.prototype);
+           
+        var ss = [new shape(), new circle(), new square(), new triangle()];
+        
+        ss.forEach(function(ss)
+            {
+                document.write(ss.draw() + "<br>");
+            });
+    </script>
+    
+</html>

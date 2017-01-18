@@ -1,0 +1,1388 @@
+Some Important concepts of Javascript
+
+1.variable declaration
+	All we need to declare is var. No character type like string, boolean or whatever.
+	A character is just a string of length 1.
+e.g 
+	var value = 42;
+	var a = 10;
+	var c = a+value;
+
+2. Declaration and definition
+	var value; //declaration (output: value is undefined)
+	value = 42; //definition 
+
+3. Primitive Type in JS are (Number, String, Boolean, undefined, null) 
+			null vs undefined
+		null: if you assign empty value.
+		undefined: if nothing has been entered.
+
+4. Type of operator
+	It simply returns the type of variable.
+e.g
+	var a =10;
+	console.log(typeof a) // output is number;
+	
+5. concatenation
+e.g 
+	123 + 4 = 127
+	123 + "4" = 1234
+
+6. difference between == operator and === operator.
+
+== operator only looks for value. 
+(20 == "20") // true;
+=== operator looks for value as well as their type 
+(20 === "20") //false;
+
+
+——————————————Ternary Operator ———————————————————————————————
+<script>
+        
+            var userInput = Number(prompt('Please Enter your number:', " "));
+            
+            userInput%2 == 0 ? (alert('even number'))
+                             : (alert('odd number'));
+</script>
+
+7. Concept of Object
+		Object can be defined via dynamically and object literal concept.
+e.g traditional concept
+function createEmp(firstname, lastname)
+        	{
+            this.firstname = firstname;
+            this.lastname = lastname;
+        	};
+        
+        var employee = new createEmp("prajay","shakya");
+        
+        document.write(employee.firstname);
+        document.write(employee.lastname);
+
+	var employee1 = new createEmp(“john”,”Doe”);
+        
+        document.write(employee1.firstname);
+        document.write(employee1.lastname);
+
+e.g adding dynamically
+
+var myObj = {};
+myObj.prop1 = "hello";
+myObj.prop2 = "adding";
+myObj.prop3 = "Object";
+myObj.prop4 = "Dynamically";
+
+console.log(myObj);
+
+output:
+Object {prop1: "hello", prop2: "adding", prop3: "Object", prop4: "Dynamically"}
+
+e.g adding object literal concept
+
+var myObj = {
+"prop1" : "hello",
+"prop2" : "adding",
+"prop3" : "Object",
+"prop4" : "By",
+"prop5" : " Object Literal "
+};
+
+myObj.prop6 = "adding more element ";
+console.log(myObj);
+
+output:
+Object {prop1: "hello", prop2: "adding", prop3: "Object", prop4: "By", prop5: " Object Literal ", prop6: "adding more element"}
+
+------Nested Object---------
+
+var NestedObj = {
+"Name" :{
+"first" : "Prajay",
+"last" : "Shakya"
+},
+"address": {
+"street": "123 main st",
+"city": "commerce",
+"country": "USA"
+},
+"contact no " : 7132806814,
+"D.O.B" : "Dec4, 1991"
+};
+
+NestedObj.Name.middle = "Kumar";
+
+NestedObj.address.aptNo = "C8823";
+
+
+console.log(NestedObj.address);
+output:
+Object {street: "123 main st", city: "commerce", country: "USA", aptNo: "C8823"}
+
+console.log(NestedObj.Name);
+output:
+Object {first: "Prajay", last: "Shakya", middle: "Kumar"}
+
+another way to access the properties of object is 
+	console.log(NestedObj.Name["first"]);
+output:
+	Prajay	
+
+
+------inorder to delete any property------------
+
+delete obj.prop1.propertyUno;
+
+
+8. ---------some Concepts of Arrays -----------------------
+	 var array = [2,3,4,5];
+            array[4] = 6;
+    console.log(array);
+output: 2,3,4,5,6
+	console.log(array.length);
+output: 5
+
+9. ------some concepts of functions-------------------
+
+a. simple function:
+function sayhello(a,b){
+                document.write("hello" + a +" "+ b);
+            }
+            
+            sayhello(" john", "Doe");  // output: hello john doe
+
+			sayhello("johnny"); //output: hello jhonny undefined
+
+b. value returning function:
+function sayhello(a,b){
+                return "firstname: " + a +","+ " lastname:"+ b;
+            }
+            
+            var output = sayhello(" john", "Abhraham");
+            document.write(output);
+
+OR
+var f = function sayhello(a,b){
+                return "firstname: " + a +","+ " lastname:"+ b;
+            }
+            document.write(f("john", "abrham"));
+
+c. anonymous function
+(function(){
+                document.write("anonymous function");
+            })();
+
+d. Passing function as an argument
+	 		
+	 		var f = function(){
+                document.write("hello"); 
+            }
+           
+            var executer = function(fn){ 
+                fn();
+            }
+            
+            executer(f);
+
+e. Passing object as function
+	var myObj = {
+            "Power": "Hanuman",
+            "function": function()
+                        {
+                            document.write("passing funciton as object");
+                        },
+            "methologies": "Agile"  
+            };
+            
+            myObj.function2 = function()
+                    {
+                        document.write("passing another function from outer scope");
+                    }
+            myObj.function();
+            document.write(myObj.Power+"</b>");
+            myObj.function2();
+
+f. Understanding function with public and private variables
+	function Person()
+            {
+                var firstname= ""; //private variable
+                var lastname = "";
+                //acessing firstname
+                this.setFirstname = function(fname)
+                {
+                    firstname = fname;
+                }
+                this.getFirstname = function()
+                {
+                    return firstname;
+                }
+                
+                //accessing lastname
+                this.setLastname = function(lname)
+                {
+                    lastname = lname;
+                }
+                this.getLastname = function()
+                {
+                    return lastname;
+                }
+                //accessing address
+                this.address = "Texas"; //public variable
+                
+                
+            }
+            
+            var personObj = new Person();
+            document.write("address: " + personObj.address + "<br>"); 
+		//this is how you access public variable
+            
+            personObj.setFirstname("prajay");
+            document.write("Fullname: " + personObj.getFirstname());
+            
+            personObj.setLastname("shakya");
+            document.write(personObj.getLastname());
+
+g. When exactly to use this method
+
+var employee = 
+           {
+               name:"John"
+           }
+       var newEmp = employee;
+        document.write("before change <br>");
+        document.write(employee.name + "<br>");
+        document.write(newEmp.name + "<br><br>");
+        
+        newEmp.name="sita";
+        
+        document.write("After change <br>");
+         document.write(employee.name + "<br>");
+        document.write(newEmp.name);
+
+output: 	john john
+		sita sita //anyone can change the content
+
+thats why we have to use this 
+var employee = function()
+           {
+               this.name = "John"
+           }
+        var newEmp = new employee();
+        var newEmp1 = new employee();
+        
+        document.write("before change <br>");
+        document.write(newEmp.name + "<br>");
+        document.write(newEmp1.name + "<br><br>");
+        
+        employee.name="sita";
+        
+        document.write("After change <br>");
+         document.write(newEmp.name + "<br>");
+        document.write(newEmp1.name);
+
+
+10. ----------- concept of Array —————
+
+two ways to create an array
+var myArray = new myArray[];
+var myArray = [];
+
+myArray.push(100); adds new items to the end of the array.
+myArray.shift(100); removes the first item of an array.
+
+myArray.pop(100); removes the last item of an array.
+myArray.unshift(100); adds new items to the beginning of an array.
+
+- - - - - - - - - - - - - - - Array Mutators - - - - - — - - - - - -
+the following are some of the examples of mutators methods
+push
+pop
+shift 
+unshift
+reverse
+sort
+splice
+
+— - - - - how to sort an Array - - - - -
+
+var myArray = [10,56,23,1,5,6,9];
+myArray.sort(function(a,b){
+	return a-b;
+});
+
+output:-
+	[1, 5, 6, 9, 10, 23, 56]
+
+- - - - - - — - - — - - - — - - — - — - - 
+using if splice 
+Syntax:
+array.splice(index , deleteCount, [ item1, item2, …, itemX ]);
+
+Example 1:
+var no = [1,2,4,5];
+
+no.splice(1,2);
+[2, 4]
+
+output:- [1, 5]
+
+Example 2:
+var ritu = [3,5,8,99,5,54];
+ritu.splice(3,3, 12, 18, 24);
+
+output:- 
+[3, 5, 8, 12, 18, 24]
+
+- - - - - - - - - - use of filter() method - - - - - - - - - - - - - - - - - - - - - 
+
+filter() method creates a new array and populates that array with all the elements 
+that meet the condition specified in a callback function. 
+
+array.filter( callbackFunction [, thisArg] )
+
+function callBackFunction(value, index, array)
+value - value of the element in array.
+index - the index position of the element in the array.
+array - the source array object that contains the element. 
+
+example:- 
+how to avoid repetition 
+myArray = [ "sam", "hari", "kabin" , "ashish" , "sam", "radha" , "geeta" , "kabin"];
+
+myArray.filter(function(value,index,array)
+               {
+		return myArray.indexOf(value) == index;
+});
+output:-
+["sam", "hari", "kabin", "ashish", "radha", "geeta"]
+
+- - - — - - - - - - — - - - — - — - - — - - - - - - — - - - - - - - - - - - 
+a. Iterating over array
+	var myArray = ["prajay", 12, 15];
+        
+        var myFunction = function(item){
+            document.write(item + "<br>");
+        }
+        
+        myArray.forEach(myFunction);
+OR - - - - ->
+	for(var x in myArray)
+            {
+                document.write(myArray[x]);
+            }
+        
+
+b. using for to iterate through array
+	var person = {fname:"John", lname:"Doe", age:25};
+
+	for (var x in person) {
+    		document.write(person[x]);
+	}
+
+output: JohnDoe25
+ 
+11. ——use of strict —
+use strict;
+
+throws an exception, why the code is not running.
+
+
+12. ————— Creating Object & javascript constructor  ————————
+
+Traditional concept 
+
+	function createEmp(firstname, lastname)
+       		 {
+            var newObj = {};
+            newObj.firstname = firstname;
+            newObj.lastname = lastname;
+           
+            return newObj;
+        	};
+        
+        var employee = createEmp("Prajay", "shakya");
+        document.write(employee.firstname);
+        document.write(employee.lastname);
+        
+Concept of constructor
+
+	        
+        function createEmp(firstname, lastname)
+        	{
+            this.firstname = firstname;
+            this.lastname = lastname;
+        	};
+        
+        var employee = new createEmp("prajay","shakya");
+        
+        document.write(employee.firstname);
+        document.write(employee.lastname);
+        
+
+13. using instanceof to know the parent object of child
+
+function Person(name, street) {
+  this.name = name;
+  this.street = street;
+  this.info = function(){
+    return "My name is " + this.name + " and I live on " + this.street;
+  }
+}
+ 
+var bobSmith = new Person("Bob Smith", "234 Main St");
+ 
+document.write(bobSmith.info() + "<br />");
+ 
+// instanceof tells you if an object is of a certain type
+document.write("Bob is a person : " + (bobSmith instanceof Person) );
+
+output : true
+
+14. Use of Prototype
+
+// ---------- PROTOTYPE —————————
+// Every function has a prototype property that contains an object
+// You can add properties and methods to the prototype object
+// and then when you call for them to execute they are used
+// just as if they belonged to the object
+
+function Mammal(name){
+  this.name = name;
+  this.getInfo = function(){
+    return "The mammals name is " + this.name;
+  }
+}
+ 
+// Use prototype to add a property
+Mammal.prototype.sound = "Grrrrr";
+ 
+// Use it to add a method
+Mammal.prototype.makeSound = function() {
+  return this.name + " says " + this.sound;
+};
+ 
+var grover = new Mammal("Grover");
+ 
+document.write(grover.makeSound() + "<br />");
+
+output: Grover says Grrrr
+ 
+
+
+15.- - - - - - Check if the element is inside Array - - - - — - 
+
+var myArray = ["prajay", 12, 15, 27, 65, "abeed"];
+        
+Array.prototype.inArray = function inArray(sample)
+{
+    for(i=0;i<myArray.length;i++){
+        if(this[i] === sample)
+            {
+                return sample + " is inside myArray";
+            }
+        else{
+            return sample + "cannot be found"
+        }
+    }
+}
+ 
+document.write(myArray.inArray("prajay"));	
+
+
+
+16. - - - - - — - - — how Inheritence works in javascript - - - — - - - - -
+
+When we ask for a property if it isn't found in the main object
+then it is searched for in the prototype object. We are able
+to inherit methods and variables from any object in a chain of objects.
+
+
+<script>
+        function Animal(){
+            this.name = "Animal";
+            
+// toString is a function in the main Object that every
+// object inherits from
+            this.toString = function(){
+                return "My name is: "+this.name;
+            };
+        }
+        function dog(){
+            this.name = "dog";
+        }
+        function Shitzu(){
+            this.name = "Shitzu";
+        }
+    // Overwrite the prototype for dog and shitzu
+        dog.prototype = new Animal();
+        Shitzu.prototype = new dog();
+        
+// After you overwrite prototype its constructor points to the
+// main object object so you have to reset the constructor after
+        
+        dog.prototype.constructor = dog;
+        Shitzu.prototype.constructor = Shitzu;
+        
+        var a = new dog();
+        var b = new Shitzu();
+        
+        document.write(a.toString()+"<br>");
+        document.write(b.toString()+"<br>");
+        
+        // Properties added to any object in the chain is inherited
+Animal.prototype.sound = "Grrrrr";
+ 
+Animal.prototype.getSound = function(){
+  return this.name + " says " + this.sound;
+}
+
+dog.prototype.sound = "bow bow";
+Shitzu.prototype.sound = "Wooo";
+        
+document.write(a.getSound()+"<br>");
+document.write(b.getSound()+"<br>");
+
+</script>
+
+17. - - - — - - -  - Function hoisting - - - - - - - -  - -  - - -  - 
+
+By default, Java Script moves all the function declaration to the top pf the current scope. This is called function hoisting. this is the reason JavaScript functions can be called before they are even defined. 
+
+var sum = addNumber(10,20);
+document.write(sum);
+
+function addNumber(a,b){
+	return a+b;
+}
+
+OR
+
+var sum = addNumber(10,20);
+document.write(sum);
+
+function addNumber(a,b){
+	return a+b;
+}
+
+output:- 30
+
+because of function hoisting, all function moves upward.
+
+
+- - - - - - - - - - - - - - - - Error handling - - - - - - - - - - - - - - - 
+
+<script>
+        var numerator = Number(prompt("Enter numerator"));
+        var denominator = Number(prompt("Enter denominator"));
+        
+        try{
+            if(denominator == 0){
+                throw{
+                    message: "cannot be divided by zero"
+                }
+            }
+            else{
+                document.write('Result: '+ (numerator/denominator));
+            }
+        }
+        catch(e)
+            {
+                document.write("error:"+e.message);
+            }
+    </script>
+
+
+- - - - - — - - — Event handling - - — - look up kudvenkat videos - - - - - - - - -
+
+- onkeyup
+<input type="button" value="Click me" id="btn"/>
+<script type="text/javascript">
+    btn.addEventListener("mouseover", changeColorOnMouseOver, false);
+    btn.addEventListener("mouseout", changeColorOnMouseOut, false);
+
+    function changeColorOnMouseOver()
+    {
+        this.style.background = 'red';
+        this.style.color = 'yellow';
+    }
+
+    function changeColorOnMouseOut()
+    {
+        this.style.background = 'black';
+        this.style.color = 'white';
+    }
+</script>
+
+- - - - — - — DOM - - - - —  - - -
+
+DOM stands for document, object, model
+
+- - - — — — — — — — -Event Listner - - - — - - - - — - - - - - - -
+
+<input type="button" value="Click me" id="btn"/>
+<input type="button" value="Remove Event Handlers"
+           onclick="removeEventHandlers()" />
+<script type="text/javascript">
+    btn.addEventListener("mouseover", changeColorOnMouseOver);
+    btn.addEventListener("mouseout", changeColorOnMouseOut);
+
+    function changeColorOnMouseOver()
+    {
+        this.style.background = 'red';
+        this.style.color = 'yellow';
+    }
+
+    function changeColorOnMouseOut()
+    {
+        this.style.background = 'black';
+        this.style.color = 'white';
+    }
+
+    function removeEventHandlers()
+    {
+        btn.removeEventListener("mouseover", changeColorOnMouseOver);
+        btn.removeEventListener("mouseout", changeColorOnMouseOut);
+    }
+</script>
+
+- - — — — — — — — -Event bubbling - - - - - - - 
+
+<html>
+<head>
+    <style type="text/css">
+        .divStyle
+        {
+            display: table-cell;
+            border: 5px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="DIV1" class="divStyle">
+        DIV 1
+        <div id="DIV2" class="divStyle">
+            DIV 2
+            <div id="DIV3" class="divStyle">
+                DIV 3
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var divElements = document.getElementsByTagName('div');
+
+        for (var i = 0; i < divElements.length; i++)
+        {
+            divElements[i].onclick = function (event)
+            {
+                event = event || window.event;
+
+                if (event.stopPropagation)
+                {
+                    event.stopPropagation();
+                } else
+                {
+                    event.cancelBubble = true;
+                }
+
+                this.style.borderColor = "red";
+                alert(this.getAttribute("id") + " backgound changed");
+            }
+        }
+    </script>
+</body>
+</html>
+
+- - - - - - - - - - - - - - JS Mouse Events - - - - - - - - 
+mouseover
+mouse out
+mouse
+mousedown
+click
+dbclick
+contextmenu
+
+- - - - - - - using regular expression in JS - - - - - - - - - - - - - - - - - - 
+
+Regular expressions is a sequence of characters that forms a search pattern.
+
+http://www.w3schools.com/jsref/jsref_obj_regexp.asp
+
+<html>
+    <title>Client_side_validation</title>
+    <body>
+        Email:
+        <input type='text' id='email' onkeyup="validateEmail()">
+    </body>
+    
+    <script>
+        function validateEmail(){
+            var email_box = document.getElementById('email');
+            var email = email_box.value;
+            
+             var emailRegEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            
+            email_box.style.color = "white";
+            
+            if(emailRegEx.test(email))
+                {
+                    email_box.style.backgroundColor = "green";
+                }
+            else
+            {
+                email_box.style.backgroundColor = "red";
+            }
+        }
+    </script>
+</html>
+
+
+- - - - - - - - — - - —  JavaScript and OOP - - - — — — - — - — — — 
+
+1. Inheritance
+2. Encapsulation
+3. Abstraction
+4. Polymorphism
+
+Objects in JavaScript can be broadly classified into 2 categories
+1. Standard built-in objects
+	eg. var currentDate = new Date();
+	
+
+2. custom objects
+- -> Traditional concept.
+	function createEmp(firstname, lastname)
+       		 {
+            var newObj = {};
+            newObj.firstname = firstname;
+            newObj.lastname = lastname;
+           
+            return newObj;
+        	};
+        
+        var employee = createEmp("Prajay", "shakya");
+        document.write(employee.firstname);
+        document.write(employee.lastname);
+
+- -> object literal concept. 
+	var myObj = 
+	{
+	"prop1" : "hello",
+	"prop2" : "adding",
+	"prop3" : "Object",
+	"prop4" : "By",
+	"prop5" : " Object Literal "
+	};
+
+myObj.prop6 = "adding more element ";
+console.log(myObj);
+
+- - -> Difference between object literal and constructor function 
+when to use object literal and when to use constructor function ?
+
+- -> Objects created using object literals are singletons. this means when a change is made to object, it affects that object across the entire script. 
+e.g
+<html>
+    <title>ObjectLiteral_singleton</title>
+    <body>
+        <h4>Full Name</h4>
+        
+    </body>
+    
+    <script>
+        var employee = {
+            firstName: "prajay",
+            lastName: "shakya"
+        }
+        
+        var emp1 = employee;
+        var emp2 = employee;
+        document.write("Before change"+ "<br>");
+        document.write(emp1.firstName + emp1.lastName + "<br>");
+        document.write(emp2.firstName + emp2.lastName + "<br>" + "<br>");
+        
+        emp1.firstName = "changed";//change made to one instance effects entire instance
+        document.write("After change"+ "<br>");
+        document.write(emp1.firstName + emp1.lastName + "<br>");
+         document.write(emp2.firstName + emp2.lastName);
+        
+        //In object literal, if i change something, it changes in all script.
+    </script>
+</html>
+
+output: - 
+Before change
+prajayshakya
+prajayshakya
+
+After change
+changedshakya
+changedshakya
+
+- -> Objects created using constructor function lets you have multiple instances of that object. this means changes made to one instance, will not effect other instance.
+e.g
+<html>
+    <title> ObjectConstructor</title>
+     <body>
+        <h4>Full Name</h4>
+        
+    </body>
+    
+    <script>
+        var employee = function()
+        {
+            this.firstName = "prajay";
+            this.lastName = "shakya";
+        }
+        
+        var emp1 = new employee();
+        var emp2 = new employee();
+        document.write("Before change"+ "<br>");
+        document.write(emp1.firstName + emp1.lastName + "<br>");
+        document.write(emp2.firstName + emp1.lastName + "<br>" + "<br>");
+        
+        emp2.firstName = "changed"; //change made to one instance doesnot affect other instance
+        document.write("After change" + "<br>");
+        document.write(emp1.firstName + emp1.lastName + "<br>");
+        document.write(emp2.firstName + emp1.lastName + "<br>");
+        //In object literal, if i change something, it changes in all script.
+    </script>
+</html>
+ 
+output:-
+Before change
+prajayshakya
+prajayshakya
+
+After change
+prajayshakya
+changedshakya
+
+- - - - — - - — - - - Global NameSpace Pollution - - - - - - - - - - - - - - - - 
+
+javascript does not support function overloading. 
+e.g
+<html>
+    <title>Global_nameSpace</title>
+    <script type='application/javascript' src='TeamA.js'></script>
+     <script type='application/javascript' src='TeamB.js'></script>
+    <body>
+        <div id="name"></div>
+    </body>
+    <script>
+        document.getElementById('name').innerHTML = new customer("prajay","shkaya").getFullName();
+    </script>
+</html>
+
+output:
+parlay shakya undefined 
+// because it does not support method overloading.
+// it can be fixed using namespace. 
+
+e.g
+
+<html>
+    <title>Global_nameSpace</title>
+    <script type='application/javascript' src='TeamA.js'></script>
+     <script type='application/javascript' src='TeamB.js'></script>
+    <body>
+        <div id="name1"></div>
+         <div id="name2"></div>
+    </body>
+    <script>
+//        document.getElementById('name').innerHTML = new       customer("prajay","shakya").getFullName();
+//        
+        //it can be fixed with namespace 
+        
+        // Call the customer function that is defined in TeamA.js
+        
+        document.getElementById('name1').innerHTML = 
+            PragimTech.TeamA.customer("Tom", "Grover").getFullName();
+
+            // Call the customer function that is defined in TeamB.js
+        document.getElementById('name2').innerHTML = 
+           PragimTech.TeamB.customer("Tom", "T", "Grover").getFullName();
+    </script>
+</html>
+
+in console.log, it tells you which function is trigred.
+keys(window)
+window.customer
+
+note:- in javascript, window is the allias for global name space.
+
+- - - - - - - - - - - - Private Members in JavaScript - - - - - - - - - - - - - 
+
+private fields: declared using var keyword inside the object.
+		 can only be accessed by private functions and privileged methods.
+
+public fields: declared using this keyword and are available outside the objects.
+		note:- they can access privileged methods but not private.  
+
+privileged function: 
+- created using this keyword.
+- public methods are created using prototype property of constructor function.
+- it can access private variables and methods. 
+
+
+e.g
+<html>
+    <title>private_members</title>
+    
+    <script>
+    function Employee(firstName, lastName)
+{
+    // Private Field
+    var privateFullName;
+
+    // Public Fields
+    this.firstName = firstName;
+    this.lastname = lastName;
+
+    // Private Function
+    var privateGetFullName = function ()
+    {
+        privateFullName = firstName + " " + lastName;
+        return privateFullName;
+    }
+
+    // Privileged Function
+    this.privilegedGetFullName = function ()
+    {
+        return privateGetFullName();
+    }
+
+    // Public Function
+    Employee.prototype.publicGetFullName = function ()
+    {
+        return this.privilegedGetFullName();
+    }
+}
+        
+        var employee = new Employee("Tom", "Grover");
+
+        // Calling public function works fine
+        document.write(employee.publicGetFullName() + "<br/>");
+
+        // Calling Privileged function works fine
+        document.write(employee.privilegedGetFullName() + "<br/>");
+
+        // Calling private method - undefined error
+        //employee.privateGetFullName();
+
+        // Calling private field - undefined error
+
+        employee.privateFullName = "ABC";
+        employee.publicGetFullName();
+        document.write(employee.privateFullName);
+
+    </script>
+    
+    
+    
+</html>
+
+- - - - - - - - - - - Properties in javascript - - - - - - - - - - - - - - - - - - - 
+
+1. Read/Write properties
+2. Read only properties
+3. Write only properties
+
+e.g:-
+<html>
+    <title>Properties_JS</title>
+    
+    <script>
+        function Employee(name, age)
+        {
+            var _name = name;
+            var _age = age;
+            //read and write 
+            Object.defineProperty(this, "age",
+            {
+                get: function () { return _age; },
+                set: function (value)
+                {
+                    if (value > 100 || value < 1)
+                    {
+                        alert("Invalid age");
+                    }
+                    else
+                    {
+                        _age = value;
+                    }
+                }
+            });
+            //read only
+            Object.defineProperty(this, "name",
+            {
+                get: function () { return _name; }
+            });
+        }
+
+        var employee = new Employee("Tom", 55);
+        // Cannot change the value of name property (read-only)
+        employee.name = "Tommy";
+        // Will alert an error - Invalid age
+        employee.age = 195;
+        document.write(employee.name + " " + employee.age);
+    </script>
+</html>
+
+- - - - - - - — - - - - - Static members in javascript - - - - - - - - - - - - - - - 
+
+objects in javascript can also have static and instance fields and methods. 
+
+instance fields: this.radius = radius;
+static fields: name_of_the_function.PI = 3.141;
+
+e.g
+static member:- 
+
+<script>
+        function circle(radius)
+        {
+            this.radius = radius;
+            circle.PI = 3.14;
+            
+            this.area = function()
+            {
+                return circle.PI * this.radius * this.radius;
+            }
+            
+            
+            
+        }
+        
+        var Circle = new circle(12);
+        document.write(Circle.area());
+        
+ </script>
+
+e.g
+static methods:-
+ <script>
+        function Shape(shapeName)
+        {
+            // Instance field
+            this.ShapeName = shapeName;
+
+            // Static Field
+            Shape.Count = ++Shape.Count || 1;
+
+            // Static method
+            Shape.ShowCount = function ()
+            {
+                return Shape.Count;
+            }
+        }
+
+        var shape1 = new Shape("Circle");
+        var shape2 = new Shape("Rectangle");
+        var shape3 = new Shape("Triangle");
+
+        document.write("Shape.Count = " + Shape.ShowCount());
+</script>
+
+- - - - - - - - - — - - - - -Prototype in JS - - - - - - - - - - - - - - - - - - - -
+
+perfect example :- 
+1. No matter how many objects you create, functions are loaded only once into memory.
+2. Allows you to override functions if required.
+ 
+<html>
+    <title>prototype_JS</title>
+    
+    <script>
+        function fullName(name)
+        {
+            this.name = name;
+            
+            //as many objects are created, that many functions are created as well. 
+            //for memory efficency, we use prototype.
+//            this.getName = function()
+//            {
+//                return this.name;
+//            }
+            
+        }
+        //benefit of using protype is that, even though many objects are created. there is only one function rendering everytime.
+        fullName.prototype.getName = function()
+            {
+                return this.name;
+            }
+        
+        var name1 = new fullName("Prajay");
+        var name2 = new fullName("Mr.Abid");
+        
+         document.write("FullName: " + name1.getName() + "<br>");
+         document.write("FullName: " + name2.getName()+ "<br>");
+        
+    </script>
+    
+</html>
+
+- - - - - - - - - - - - - Method overriding in JS - - - - - - - - - - - - - - - - - 
+
+<html>
+    <script type='application/javascript' src="overriding.js"> </script>
+        
+    <title>Overriding_in_js</title>
+    <script>
+        OveridingName();
+        
+        function OveridingName()
+        {
+            //overriding a function
+            fullName.prototype.getName = function()
+                {
+                        return this.name.toUpperCase();
+                }
+            
+            
+            var name1 = new fullName("Prajay");
+            var name2 = new fullName("Mr.Abid");
+        
+         document.write("FullName: " + name1.getName() + "<br>");
+         document.write("FullName: " + name2.getName()+ "<br>");
+        }
+    </script>
+   
+</html>
+
+overriding.js
+
+    function fullName(name)
+        {
+            this.name = name;
+        }
+        
+    fullName.prototype.getName = function()
+        {
+            return this.name;
+        }
+
+
+- - - - - - - - - - - - - - - - - - Inheritanceence - - - - - - - - - - - - - - - - - 
+
+
+ <script>
+       var Employee = function(name)
+       {
+           this.name = name;
+       }
+       
+       Employee.prototype.getName = function()
+       {
+           return this.name;
+       }
+       
+       var Emp_Salary = function(salary)
+       {
+           this.salary = salary;
+       }
+       
+       Employee.prototype.getSalary = function()
+       {
+           return this.salary;
+       }
+       
+       var emp1 = new Employee("Prajay Shakya");
+
+        // this is how inhetence is done in JS. Employee is a parent if Emp_Salary.
+        // it means Emp_Salary can access Employee.
+        Emp_Salary.prototype = emp1;
+        
+        var emp_sal1 = new Emp_Salary(1000);
+        
+        document.write('Employee Name: '+ emp_sal1.getName() + "<br>");
+        document.write('Employee Salary: '+ emp_sal1.getSalary() +  "<br>");
+
+</script>
+
+- - - - - - - - - - - - - - - -Abstract class concept in js - - - - - - - - - - - - - 
+
+<html>
+    <title>Abstract_js</title>
+    
+    <script>
+        //create a shape object which is abstract
+        var shape = function()
+        {
+            this.shapeName = "none";
+            throw new Error('Cannot create an instance of an abstract class');
+        }
+        
+        //Add draw function to the shape prototype
+        shape.prototype.draw = function()
+        {
+            return "Drawing " + this.shapeName;
+        }
+        
+        //if someone tries to create an instance of shape, it throws an error.
+        //var ss = new shape();
+        
+        //
+        var circle = function(shapeName)
+        {
+            this.shapeName = shapeName;
+        }
+        //shape will be base type for cirlce (shape is parent of circle)
+        //circle inherits shape as well as draw method
+        circle.prototype = Object.create(shape.prototype);
+        
+        //instance of circle object
+        var cc = new circle('circle');
+        document.write(cc.draw() + "<br>");
+        
+        document.write("cc instanceof shape: ")
+        document.write(cc instanceof shape);
+        
+        document.write("<br>");
+        document.write("cc instanceof circle: " );
+        document.write( cc instanceof circle);
+        
+        
+    </script>
+</html>
+
+
+- - - - - - — - - - - - - - -  - - polymorphism - - - - — - - - - - - - - - - - -
+
+<html>
+    <title>Polymorphism_OverRiding</title>
+    
+    <script>
+        var shape = function(){}
+        shape.prototype.draw = function()
+        {
+            return "I am generic shape";
+        }
+        
+        var circle = function(){}
+        //inheritence 
+        circle.prototype = Object.create(shape.prototype);
+        //overriding draw method of circle
+        circle.prototype.draw = function()
+        {
+            return "I am circle shape";
+        }
+        
+        var square = function(){}
+        square.prototype = Object.create(shape.prototype);
+        square.prototype.draw = function()
+        {
+            return "I am square shape";
+        }
+        
+        //its going to display its parent. 
+        var triangle = function(){}
+        triangle.prototype = Object.create(shape.prototype);
+           
+        var ss = [new shape(), new circle(), new square(), new triangle()];
+        
+        ss.forEach(function(ss)
+            {
+                document.write(ss.draw() + "<br>");
+            });
+    </script>
+    
+</html>
+
+- - - - - — - - — - - - - - Cookies in JavaScript - - - - - - - — - - - - — - - - - 
+
+optional Cookie Attributes
+expire
+max-age
+domain
+path
+secure
+
+this cookie expires as soon as the browser is closed.
+document.cookie = “color = red” ;
+
+if you want to create a persistent cookie. 
+The cookie that is not deleted even after the browser is closed.
+use expires or max-age attributes
+
+document.cookie = “color=red;expire=Fri, 5 Aug 2016 01:00:00 UTC”;
+OR
+document.cookie = “color=red; max-age=“ + (60 * 60 * 24 * 30) + “;”
+
+
+e.g:-
+
+<html>
+    <title>Cookies_javaScript</title>
+    <button value="setCookie" onclick="setCookie()"> setCookies</button>
+    <button value="getCookie" onclick="getCookie()"> getCookies</button>
+    <script>
+        function setCookie()
+        {
+            document.cookie = "color=red;max-age=" + (60 * 60 * 24 * 30) + ";"
+        }
+        
+        function getCookie()
+        {
+            if(document.cookie.length !=0){
+                var nameValue = document.cookie.split("=");
+                alert("Name = " + nameValue[0] + " value = " + nameValue[1]);
+            }
+            else{
+                alert("cookies not found");
+            }
+        }
+    
+    </script>
+</html>
+
+
+
+
+- - - - - - - - - - - - - - - - Javascript disabled - - - - - - - - - - - - - - - - -
+<html>
+    <title> Disable/Enable via JS</title>
+    
+<!--    if javascript is diableded, following is going to trigger.-->
+    <noscript>
+        <style>
+            .noScript
+            {
+                display: none;
+            }
+        </style>
+        <h3> Please Enable javascript. </h3>
+    </noscript>
+    
+    <div class='noScript'>
+        <table border="1">
+            <tr>
+            <td> Full_Name </td>
+            <td>
+                <input id='txtId' type="text" onblur="validation('txtId')" onkeyup="validation('txtId')">
+            </td>
+            </tr>
+            <td> Email_Address </td>
+            <td>
+                <input id='emailId' type="text" onblur="validation('emailId')" onkeyup="validation('emailId')">
+            </td>
+        </table>
+    </div>
+    
+    
+<!--    validation using javascript-->
+    <script>
+        function validation(validId)
+        {
+            var element = document.getElementById(validId);
+            
+            if(element.value == "")
+                {
+                    element.style.background = "red";
+                }
+            else{
+                 element.style.background = "white";
+            }
+        }
+    </script>
+</html>

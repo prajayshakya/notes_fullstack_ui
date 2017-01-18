@@ -1,0 +1,24 @@
+note: npm is a package manager for javascript.
+
+Unit Testing with karma and jasmine
+
+General flow 
+	1.Write a test
+	2.Implement it
+	3.check your tests
+cool thing about karma is it will watch and re-run your file without your action.
+
+
+few steps to be followed
+
+1.npm install -g karma-cli
+
+after all the installation go to terminal
+
+- karma init (select jasmine, …)
+
+- add js files, and all required files in config.js
+
+- karma start
+
+

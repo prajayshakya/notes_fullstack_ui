@@ -1,0 +1,23 @@
+<html>
+    <title>Global_nameSpace</title>
+    <script type='application/javascript' src='TeamA.js'></script>
+     <script type='application/javascript' src='TeamB.js'></script>
+    <body>
+        <div id="name1"></div>
+         <div id="name2"></div>
+    </body>
+    <script>
+//        document.getElementById('name').innerHTML = new       customer("prajay","shakya").getFullName();
+//        
+        //it can be fixed with namespace 
+        
+        // Call the customer function that is defined in TeamA.js
+        
+        document.getElementById('name1').innerHTML = 
+            PragimTech.TeamA.customer("Tom", "Grover").getFullName();
+
+            // Call the customer function that is defined in TeamB.js
+        document.getElementById('name2').innerHTML = 
+           PragimTech.TeamB.customer("Tom", "T", "Grover").getFullName();
+    </script>
+</html>

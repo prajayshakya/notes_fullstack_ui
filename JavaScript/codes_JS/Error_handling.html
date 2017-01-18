@@ -1,0 +1,27 @@
+<html>
+    <title>Try/Catch</title>
+    <body>
+    
+    </body>
+    
+    <script>
+        var numerator = Number(prompt("Enter numerator"));
+        var denominator = Number(prompt("Enter denominator"));
+        
+        try{
+            if(denominator == 0){
+                throw{
+                    message: "cannot be divided by zero"
+                }
+            }
+            else{
+                document.write('Result: '+ (numerator/denominator));
+            }
+        }
+        catch(e)
+            {
+                document.write("error:"+e.message);
+            }
+    </script>
+    
+</html>

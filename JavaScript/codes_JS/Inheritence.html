@@ -1,0 +1,45 @@
+<html>
+    <title>Inheritence_js</title>
+    <script>
+       var Employee = function(name)
+       {
+           this.name = name;
+       }
+       
+       Employee.prototype.getName = function()
+       {
+           return this.name;
+       }
+       
+       var Emp_Salary = function(salary)
+       {
+           this.salary = salary;
+       }
+       
+       Employee.prototype.getSalary = function()
+       {
+           return this.salary;
+       }
+       
+       var emp1 = new Employee("Prajay Shakya");
+        // this is how inhetence is done in JS. Employee is a parent if Emp_Salary.
+        // it means Emp_Salary can access Employee.
+        Emp_Salary.prototype = emp1;
+        
+        var emp_sal1 = new Emp_Salary(1000);
+        
+        document.write('Employee Name: '+ emp_sal1.getName() + "<br>");
+        document.write('Employee Salary: '+ emp_sal1.getSalary() +  "<br>");
+        
+        document.write('emp_sal1 is a instanceof Employee: ' + emp_sal1 instanceof Employee); //check if inheritence is working.
+        
+        document.write("<br>");
+        document.write("<br>");
+        
+    document.write('emp1 has a property name: ' + emp1.hasOwnProperty('name') + "<br>");
+        
+        document.write('emp1.hasOwnProperty salary: '+emp_sal1.hasOwnProperty('salary') + "<br>");
+        
+        
+    </script>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <title> ObjectConstructor</title>
+     <body>
+        <h4>Full Name</h4>
+        
+    </body>
+    
+    <script>
+        var employee = function()
+        {
+            this.firstName = "prajay";
+            this.lastName = "shakya";
+        }
+        
+        var emp1 = new employee();
+        var emp2 = new employee();
+        document.write("Before change"+ "<br>");
+        document.write(emp1.firstName + emp1.lastName + "<br>");
+        document.write(emp2.firstName + emp1.lastName + "<br>" + "<br>");
+        
+        emp2.firstName = "changed"; //change made to one instance doesnot affect other instance
+        document.write("After change" + "<br>");
+        document.write(emp1.firstName + emp1.lastName + "<br>");
+        document.write(emp2.firstName + emp1.lastName + "<br>");
+        //In object literal, if i change something, it changes in all script.
+    </script>
+</html>

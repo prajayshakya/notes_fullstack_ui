@@ -1,0 +1,162 @@
+Some important contents of html5
+
+
+1.setup the language as english.
+	<html lang = "en"> </html> 
+
+2. redirect into another html page.
+	<meta charset="UTF-8"/>
+	<meta http-euiv = "refresh" content ="3; url = redirect.html/>
+	
+	-it refreshes the page. After 3 sec, it automatically loads another html page
+	
+3.  <meta name = "keywords" content = "html5 canvas, html5 tutorial, learn html5 />
+	
+	<meta name = "robots" content = "index, follow" >
+	- when you hit this keywords in google, this page is going to be rendered.
+	
+4. To set icon(picture) in tittle
+
+	<link rel='icon' href = 'favicon.ico />
+	for eg.
+	<html>
+    <link rel='icon' href='392087_10151158884305006_241945176_n.jpg'>
+    <title> cubic </title>
+	</html>
+
+5.  in order to check if the html that you typed is valid.
+	go to : http://validator.w3.org/
+	
+6. to keep some quotes you can use following two methods
+	<blockquote cite="http://validator.w3.org/">
+	Never underestimate the power of a angry man </blockquote>
+	OR
+	<q cite="http://validator.w3.org/">
+	Never underestimate the power of a angry man 
+	</q>
+
+7. 	<pre> </pre> helps to display the content as it is. without any modification.
+	<code> </code>  any JS or PHP code goes in here.
+	
+8.	abbreviation 
+	<abbr title="html stands for hypertext markup language> 
+		html
+	</abbr>
+	OR
+	<dfn title = "html stands for hypertext markup language> 
+		html
+	</dfn>
+	
+9. character entity / charref
+	&cent
+	&pound
+	&copy
+	&deg
+	<sup> and <sub> //super script and sub script
+	<ruby>  japanese <rt> meaning </rt> </ruby>
+
+10. <a href = "http://youtube.com " tittle = "youtube"> youtube </a>
+	hyperlink: links to another website.
+
+11. how to bounce around in same page. 
+	top dekhi bottom jane, feri bottom bata top jane
+	
+	<a name="pageTop"> top of the page</a>
+    <a href = "bouncing.html#pageBottom"> bottom of page</a>
+    <p>
+		........
+	</p>
+    <a href="bouncing.html#pageTop">top pf page</a>
+    <a id="pageBottom">Bottom of page</a>
+
+12. image map example. image ma click garda tesko link kholne
+    Use a program named GIMP
+    
+    <map name="map">
+    	paste all the codes from gimp
+    </map> 
+		
+13. loading pdf file, html file, audio wave file.
+	<object data = "tutorial.pdf" type = "application/pdf width" = "750" height="400">
+	</object>
+
+14.  suppose I have to load youtube video, in my webpage.
+	<iframe width = "560" height="720" src="https://www.youtube.com/watch?v=ozVRGho-cZQ" allowfullscreen="">
+	</iframe>
+	
+	<embed >
+	<video controls autoplay loop preload> 
+		<source src = ... type="video/mp4" >
+
+15. structures in html5
+
+	<nav> </nav>
+	
+	<main>
+		<section>
+			<article>
+			
+			</article>
+		</section>
+	</main>
+<footer> </footer>
+
+16. Table format in html5
+	<table>
+		<caption> Baseball </caption>
+		<thead>
+			<tr>
+				<td colspan="4"> best </td>
+			</tr>
+		</thead>
+		
+		<tfoot>
+			<tr><td> footer </td></tr>
+		</tfoot>
+	</table>
+
+17.  use of local storage // something that is important.
+
+<html>
+    <div>
+        Enter you name:
+        <br>
+        <input type = "text" id="yourName" size = "50">
+        <br><br>
+        <button onClick="setName()"> submit </button>
+        <button onClick="getName()"> Display </button>
+        <button onClick="removeName()"> remove </button>
+        
+        <script>
+            
+            function setName(){
+                var username = document.getElementById("yourName").value;
+                if(username === "") return false;
+                localStorage.setItem("name",username);
+                document.getElementById("yourName").value="Name saved";
+            }
+            
+            function getName(){
+                if(localStorage.getItem("name" === null) ) return false;
+                document.getElementById("yourName").value = "Named saved as: "+localStorage.getItem("name");
+            }
+            
+            function removeName(){
+                 if(localStorage.getItem("name" === null) ) return false;
+                    localStorage.removeItem("name");
+                    document.getElementById("yourName").value="Name removed";
+            }
+            
+        </script>
+    </div>
+</html>
+
+
+note:- disabled = true  // in submit button can disabled
+
+TextArea aka comment box in html5
+        <h4>Comments:</h4>
+        <br>
+        <textarea id = "txtArea" rows='20' cols=
+                  '80'> </textarea>
+			

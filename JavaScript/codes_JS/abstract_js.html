@@ -1,0 +1,43 @@
+<html>
+    <title>Abstract_js</title>
+    
+    <script>
+        //create a shape object which is abstract
+        var shape = function()
+        {
+            this.shapeName = "none";
+            throw new Error('Cannot create an instance of an abstract class');
+        }
+        
+        //Add draw function to the shape prototype
+        shape.prototype.draw = function()
+        {
+            return "Drawing " + this.shapeName;
+        }
+        
+        //if someone tries to create an instance of shape, it throws an error.
+        //var ss = new shape();
+        
+        //
+        var circle = function(shapeName)
+        {
+            this.shapeName = shapeName;
+        }
+        //shape will be base type for cirlce (shape is parent of circle)
+        //circle inherits shape as well as draw method
+        circle.prototype = Object.create(shape.prototype);
+        
+        //instance of circle object
+        var cc = new circle('circle');
+        document.write(cc.draw() + "<br>");
+        
+        document.write("cc instanceof shape: ")
+        document.write(cc instanceof shape);
+        
+        document.write("<br>");
+        document.write("cc instanceof circle: " );
+        document.write( cc instanceof circle);
+        
+        
+    </script>
+</html>

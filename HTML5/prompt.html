@@ -1,0 +1,32 @@
+<html>
+    <!-- <link rel='icon' href='/WhaDnTb7.png'> -->
+    <title> Use of prompt</title>
+    <head> This is how we use prompt in JS </head>
+    <body>
+        
+     
+    <script>
+        
+        document.write("5+4 = ", 5+4, "<br/>"); //simple mathmatics in javascript
+        document.write("5+4 = " + 5+4); //concatination
+        
+        var yourName = prompt("Whats your name"); //pops up the message
+        
+        if(yourName != null){
+            document.getElementById("name").innerHTML = "Hello "+ yourName;
+        }
+        else{
+            alert("load the page ");
+        }
+        
+        
+        
+    </script>
+        
+           <p id="name"> </p>
+        
+        
+    </body>
+    
+    
+</html>

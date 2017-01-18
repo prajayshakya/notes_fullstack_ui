@@ -1,0 +1,87 @@
+<html>
+    <title> Addition </title>
+    <head>
+    <script type="text/javascript">
+            
+        
+        function addNumber()
+        {
+            var fnum = document.getElementById("num1").value;
+            if(fnum == "")
+                {
+                    document.getElementById("span1").innerHTML = "Empty";
+                    return;
+                }
+            fnum = parseFloat(fnum);
+            if(isNaN(fnum))
+                {
+                    document.getElementById("span1").innerHTML = "Enter integer";
+                    return;    
+                }
+            
+            
+                
+         
+            
+           var lnum = document.getElementById("num2").value;
+            if(lnum == "")
+                {
+                    document.getElementById("span2").innerHTML = "Empty";
+                    return;
+                }
+            lnum = parseFloat(lnum);
+          
+            if(isNaN(lnum))
+                {
+                    document.getElementById("span2").innerHTML = "Enter integer";
+                    return;
+                }
+             
+            
+                
+                
+            document.getElementById("res").value = fnum + lnum;
+            document.getElementById("span1").innerHTML = "good";
+            document.getElementById("span2").innerHTML = "good";
+            
+       
+        }   
+    </script> 
+    </head>
+    <body>
+        <table style="border:1px solid black">
+         
+                <tr>
+                    <td> FirstNumber </td>
+                    <td>
+                        <input type="text" id="num1">
+                        <span id="span1" style="color:red"></span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td> SecondNumber</td>
+                    <td>
+                        <input type="text" id="num2">
+                         <span id="span2" style="color:red"></span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td> Result </td>
+                    <td>
+                        <input type="text" id="res">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                    </td>
+                    <td> <button onclick='addNumber()'> Add </button></td>
+                </tr>
+            
+        </table>
+           
+    
+    </body>
+</html>

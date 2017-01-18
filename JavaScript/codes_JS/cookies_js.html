@@ -1,0 +1,23 @@
+<html>
+    <title>Cookies_javaScript</title>
+    <button value="setCookie" onclick="setCookie()"> setCookies</button>
+    <button value="getCookie" onclick="getCookie()"> getCookies</button>
+    <script>
+        function setCookie()
+        {
+            document.cookie = "color=red;max-age=" + (60 * 60 * 24 * 30) + ";"
+        }
+        
+        function getCookie()
+        {
+            if(document.cookie.length !=0){
+                var nameValue = document.cookie.split("=");
+                alert("Name = " + nameValue[0] + " value = " + nameValue[1]);
+            }
+            else{
+                alert("cookies not found");
+            }
+        }
+    
+    </script>
+</html>

@@ -1,0 +1,72 @@
+Some important concept of Angular JS
+
+1.	AngularJS is a very powerful JavaScript Framework. It is used in Single Page Application.
+	AngularJS provides developers options to write client side application (using JavaScript)
+	in a clean MVC(Model View Controller) way.
+	
+2. Core features of AngularJS
+	Data-binding − It is the automatic synchronization of data between model and view components.
+
+	Scope − These are objects that refer to the model. They act as a glue between controller and view.
+
+	Controller − These are JavaScript functions that are bound to a particular scope.
+
+	Services − AngularJS come with several built-in services for example $http to make a XMLHttpRequests.
+				 These are singleton objects which are instantiated only once in app.
+
+	Filters − These select a subset of items from an array and returns a new array.
+	
+	Directives − Directives are markers on DOM elements (such as elements, attributes, css, and more).
+				 These can be used to create custom HTML tags that serve as new, custom widgets.
+	 				AngularJS has built-in directives (ngBind, ngModel...)
+
+	Routing − It is concept of switching views.
+	
+	Model View Whatever − MVC is a design pattern for dividing an application into different parts 
+						(called Model, View and Controller), each with distinct responsibilities.
+						AngularJS does not implement MVC in the traditional sense, but rather something 
+						closer to MVVM (Model-View-ViewModel). 
+	
+3. Advantages and disadvantages
+Advantage:
+   	AngularJS provides capability to create Single Page Application in a very clean and maintainable way.
+
+	AngularJS provides data binding capability to HTML thus giving user a rich and responsive experience
+
+	AngularJS code is unit testable.
+
+	With AngularJS, developer write less code and get more functionality.
+
+	In AngularJS, views are pure html pages, and controllers written in JavaScript do the business processing.
+
+Disadvantage:
+	Not Secure − Being JavaScript only framework, application written in AngularJS are not safe. 
+				Server side authentication and authorization is must to keep an application secure.
+
+	Not degradable − If your application user disables JavaScript then user will just see the basic page and nothing more.
+	
+
+4. Components of AngularJS
+
+ng-app − This directive defines and links an AngularJS application to HTML.
+
+ng-model − This directive binds the values of AngularJS application data to HTML input controls.
+
+ng-bind − This directive binds the AngularJS Application data to HTML tags.
+
+5. what exactly is MVC
+
+Model − It is the lowest level of the pattern responsible for maintaining data.
+
+View − It is responsible for displaying all or a portion of the data to the user.
+
+Controller − It is a software Code that controls the interactions between the Model and View.
+
+
+5.Following directives can be used to bind application data to attributes of HTML DOM Elements.
+
+Sr.No.	Name	Description
+1	ng-disabled	disables a given control.
+2	ng-show	shows a given control.
+3	ng-hide	hides a given control.
+4	ng-click	represents a AngularJS click event.

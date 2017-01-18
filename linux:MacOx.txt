@@ -1,0 +1,19 @@
+some unix/ MacOS X commands
+
+ls  ----view all directory
+
+ls -l  ---view directory in list
+
+clear  ---clears everything
+
+cd name --go inside a directory
+
+mkdir name --make a directory
+
+pwd  ----shows the path of the directory
+
+rmdir name --removes directory
+
+cd ..  -- goes back by one step 
+
+cd --- takes you back to the home directory

@@ -1,0 +1,33 @@
+<html>
+    <title>Recurssion</title>
+    <body>
+        
+        
+        <script>
+            var factorial= function(num){
+                
+                
+                if(num == 0 || num == 1){
+                    return 1;
+                }
+                var result = num;
+                while(num>1){
+                    result = result * (num-1);
+                    num = num-1;
+                }
+                return result;
+            }
+            document.write(factorial(5));
+            
+            //OR
+            
+            function individual(n){
+                if(n == 0 || n == 1){
+                    return 1;
+                }
+                return n*individual(n-1)
+            }
+            document.write(individual(5));
+        </script>
+    </body>
+</html>

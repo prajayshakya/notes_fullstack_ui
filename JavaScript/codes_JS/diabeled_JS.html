@@ -1,0 +1,46 @@
+<html>
+    <title> Disable/Enable via JS</title>
+    
+<!--    if javascript is diableded, following is going to trigger.-->
+    <noscript>
+        <style>
+            .noScript
+            {
+                display: none;
+            }
+        </style>
+        <h3> Please Enable javascript. </h3>
+    </noscript>
+    
+    <div class='noScript'>
+        <table border="1">
+            <tr>
+            <td> Full_Name </td>
+            <td>
+                <input id='txtId' type="text" onblur="validation('txtId')" onkeyup="validation('txtId')">
+            </td>
+            </tr>
+            <td> Email_Address </td>
+            <td>
+                <input id='emailId' type="text" onblur="validation('emailId')" onkeyup="validation('emailId')">
+            </td>
+        </table>
+    </div>
+    
+    
+<!--    validation using javascript-->
+    <script>
+        function validation(validId)
+        {
+            var element = document.getElementById(validId);
+            
+            if(element.value == "")
+                {
+                    element.style.background = "red";
+                }
+            else{
+                 element.style.background = "white";
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <title>Methods In Strings </title>
+    <body>
+        <h3>Replacing in String</h3>
+        <div id='myString'></div>
+            <div id = 'result'></div>
+            <div id= 'result2'></div>
+        <hr>
+        <h3>Slicing in String </h3>
+        <div id='sentence'></div>
+            <div id='slice1'></div>
+            <div id='slice2'></div>
+    </body>
+    
+    <script>
+        var myString = " Hello felisia hello";
+         document.getElementById('myString').innerHTML = myString;
+        
+        //change specific character in string, case sensitive
+        var result = myString.replace(/Hello/g, "bye bye ");
+        document.getElementById('result').innerHTML = result;
+        
+        //gi is not case sensitive
+        var result2 = myString.replace(/Hello/gi, "bye bye ");
+       document.getElementById('result2').innerHTML = result2;
+        
+        var sentence = "java tutorial";
+         document.getElementById('sentence').innerHTML = sentence;
+        
+        var slice1 = sentence.slice(0,5);
+        document.getElementById('slice1').innerHTML = slice1;
+        
+        var slice2 = sentence.slice(5);
+         document.getElementById('slice2').innerHTML = slice2;
+    </script>
+</html>

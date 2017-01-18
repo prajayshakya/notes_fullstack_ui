@@ -1,0 +1,51 @@
+<html>
+    <title>Sub String</title>
+    
+    <body>
+        <table style="border:1px solid black">
+                <tr>
+                    <td> Email address </td>
+                    <td>
+                        <input type="text" id="email">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>emailPart</td>
+                    <td>
+                        <input type="text" id="emailpart">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>domainPart</td>
+                    <td>
+                        <input type="text" id="domain">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                    </td>
+                    <td> <button onclick='getEmail()'> Get email and domain </button></td>
+                </tr>
+        </table>
+    </body>
+    
+    <script>
+        function getEmail()
+        {
+                var emailAddress = document.getElementById('email').value;
+                var emailpart = emailAddress. substring(0, emailAddress.indexOf('@'));
+                var domain = emailAddress. substring(emailAddress.indexOf('@')+1);
+            
+            document.getElementById('emailpart').value = emailpart;
+            document.getElementById('domain').value = domain;
+            
+            
+        }
+       
+        
+    </script>
+    
+</html>

@@ -1,0 +1,46 @@
+
+@import "heading.css";
+@import "paragraph.css";
+ 
+/* @import rules must precede all others */
+ 
+* { font-family: "Arial Black", Gadget, sans-serif;}
+ 
+div * { font-family: "Comic Sans MS", cursive, sans-serif; }
+ 
+.sitelink { font-family: Georgia, serif; }
+ 
+#tonyquote{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: black;
+}
+ 
+p.sitelink {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: black;
+}
+ 
+span#tonyname {
+  font-family: "Times New Roman", Times, serif;
+  color: blue;
+}
+ 
+#tutorials ol li {
+  color: purple;
+}
+ 
+#tutorials ul li {
+  color: red;
+}
+
+h3 + p {
+font-style: italic;
+}
+
+h3+p > a {
+color: red;
+}
+
+p#tonyquote{
+background: #F2f3F4 url("13533248_1185576821467263_6768590091564686836_n.jpg") repeat;
+}

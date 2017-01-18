@@ -1,0 +1,30 @@
+some important concept of javascript
+
+1. document.write() // writing into html // same as system.out.println(....);
+	alert() //pops the box 
+
+2.	Relational Operators: ===  !=  > <  >=  <== 
+	logical Operators: && \\ !
+
+	if, switch works same as java
+	OR
+	(condition) ? ifTrue : ifFalse
+	var age=5;
+	var canIVote = (age>=18) ? true:false;
+
+3. looping
+	while , dowhile ,for //similar to java
+	
+4. displaying all the objects
+	eg. var customer = { name : "BobThomas", address: "123 Main",
+				balance:50.5};
+				
+				for(k in customer)
+				{
+					document.write(customer[k]+ "<br />");
+				}	
+		output: BobThomas
+				123 Main
+				50.5
+5. 
+		

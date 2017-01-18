@@ -1,0 +1,170 @@
+Some important tips for CSS-3 (cascading style sheet 3)
+https://www.youtube.com/watch?v=CUxH_rWSI1k
+
+ 1. 	CSS Validation Service
+ 2. 	suppose i have 4 .Css file. It is good to import all the css 	file in one.
+	e.g @import "heading.css";
+		@import "paragraph.css";
+		
+3. changes something in entire document
+	*{ font-family: "Arial Black" Gadget, sans-serif;}
+similarly, for div
+	div * {font-family: "Arial Black" Gadget, sans-serif;}
+
+4. we can change by 3 ways. id, class, inline
+	id we use #
+	class we use .
+	
+5. The HTML <span> tag is used for grouping and applying styles to inline elements.
+	if you want to style a small bit of text, <span> tag must be used.
+e.g
+<p id = "tonyquote"> we wake up every day, go to work.<span id ="tonyname"> - Tony Escabor
+	whatever.css
+	span#tonyname { font-family: "Palatino Linotype", "book Antiqua";}
+	p#tonyquote { font-family: "Palatino Linotype", "book Antiqua";}
+	
+e.g 
+	<div id = "tutorials">
+	<ol>
+		<li> Rails </li>
+		<li> Model </li>
+	</ol>
+	<ul>
+		<li> Sass </li>
+		<li> mass </li>	
+	</ul>
+whatever.css
+#tutorials ol li {color:purple;}	
+#tutorials ul li {color:green;}	
+
+
+6. 	<h3>Favorite Video Games</h3>
+    <p>List of my current <a href="nintendogames">favorite video games</a></p>
+whatever.css
+to change the <p> into italic
+
+h3+p {
+font: italic;
+}
+
+to change the color of href
+
+h3 + p > a 
+{
+color : red;
+}
+
+7. padding, margin and border
+
+padding: 10px, 10px, 10px, 10px;
+margin:
+
+border types are 
+	-solid
+	-dotted
+	-dashed
+	-double
+
+8. to keep the image in a background of some Div
+	#lorem{
+	background: url ("Repeat.png") repeat;
+	}
+
+9. Unit Types
+	-Pixels
+	-Points
+	-Ems
+	-Percent 
+
+10. re-search more on Block elements(contains breaks) and inline statements(doesnot contain breaks)
+
+11. Inorder to move the content in different positioning
+	do more reasearch on 
+	{
+		position: absolute;
+		bottom: 0px;
+		top: 0px;
+		right: 0px;
+		left: 0px;
+	}
+
+12. eg of fixed positioning (kunai div jata cha tyatai basne )
+	#fixed-position{
+		position: fixed;
+		top: 0;
+		width: 0;
+		background: red;
+		border: 0.1em solid black;
+		margin:0;
+		}
+
+13. floating takes a key role in positioning as well
+
+14. Use or clip and scroll ....specifically for images
+
+div.overflow-clip{
+	position: absolute;
+	width:100px;
+	clip:rect(0px, 50px,50px,0px) // sets the image size as rectangle and cuts off all un-required space
+}
+div.overflow-scroll{
+	top: 30px;
+	overflow: scroll; //overflow:shown, hidden, scroll
+}
+
+15. for href links in html5
+	a:hover { color:blue; }
+	a:active {color:red; }
+	a:visited { color: green}
+
+16. if you want to add some symbol before a content of any paragraph
+	p#para-1:before{
+	content: "*";
+	}
+
+17. autocrementing the list inside a list
+	checkout 
+	counter-increment: 
+	content:
+
+18. while writing articles i want the font of the first letter be bigger than as usuall 
+	#para-2: first-letter{
+		font-size: 25pt;
+		}
+//likewise it can be done for first-line
+
+19. suppose whenever i go to div containing links. i want to change my cursor display
+	cursor: pointer; 
+
+20. remember in online shopping when you move ur cursor to any image, it magnifies into 
+	this can be done 
+	
+	a img.hidden{
+		visibility: hidden;
+		position: absolute;
+		left: 110px;
+		top: 400px;
+		}
+		
+	a:hover img.hidden{
+		visibility: visible;
+		}
+
+21. some examples of text decoaration
+
+text-decoration: underline, line-through, overline;
+text-transform: lowercase, uppercase, capitalze;
+
+22. to play more with div 
+	check out the option of box-shadow // gray, gray inset;
+
+
+
+
+		
+			
+
+	
+
+ 
+	

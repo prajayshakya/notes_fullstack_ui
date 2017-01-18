@@ -1,0 +1,39 @@
+<html>
+    <title>Properties_JS</title>
+    
+    <script>
+        function Employee(name, age)
+        {
+            var _name = name;
+            var _age = age;
+            //read and write 
+            Object.defineProperty(this, "age",
+            {
+                get: function () { return _age; },
+                set: function (value)
+                {
+                    if (value > 100 || value < 1)
+                    {
+                        alert("Invalid age");
+                    }
+                    else
+                    {
+                        _age = value;
+                    }
+                }
+            });
+            //read only
+            Object.defineProperty(this, "name",
+            {
+                get: function () { return _name; }
+            });
+        }
+
+        var employee = new Employee("Tom", 55);
+        // Cannot change the value of name property (read-only)
+        employee.name = "Tommy";
+        // Will alert an error - Invalid age
+        employee.age = 195;
+        document.write(employee.name + " " + employee.age);
+    </script>
+</html>

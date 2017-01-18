@@ -1,0 +1,55 @@
+ 1. you can just declare the value for parameter initially 
+ function add (num1 = 0,num2=0) // new javascript 
+                {
+	               return num1+num2;
+	
+                }
+                console.log(add(3,4));
+                console.log(add(3));
+                
+                
+2. according to new javascript there is new way to define function
+            
+            var add3 = (num1,num2) => num1 + num2;
+            
+            console.log(add3(3,4));
+
+3. research on regex character matching
+ var regEx = new RegExp('^([a-z]|[A-Z])([a-z]|[A-Z]|[1-9])*$', 'g'); //^starts, $ends, gexactMatch
+
+if(firstName.length == 0 || firstName.match(regEx)==null)
+    {
+        $("#fnameErr").show();
+    }
+    else{
+        $("#fnameErr").hide();
+    }
+
+4. new way to define getters and setters
+
+// ---------- CONSTRUCTOR GETTERS AND SETTERS ----------
+// Still used even though it is (Deprecated)
+function Coordinates(){
+  this.latitude = 0.0;
+  this.longitude = 0.0;
+}
+ 
+// Define the getter with the prototype to assign it to with
+// the property name and the getter function
+Object.__defineGetter__.call(Coordinates.prototype, "getCoords", function(){
+    return "Lat : " + this.latitude + " Long: " + this.longitude;
+});
+ 
+// Define the setter with the prototype to assign it to with
+// the property name and the setter function
+Object.__defineSetter__.call(Coordinates.prototype, "setCoords", function(coords){
+    var parts = coords.toString().split(", ");
+    this.latitude = parts[0] || '';
+    this.longitude = parts[1] || '';
+});
+ 
+var testCoords = new Coordinates();
+ 
+testCoords.setCoords = "40.71, 74.00";
+ 
+document.write("Coordinates : " + testCoords.getCoords + "<br />");

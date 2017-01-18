@@ -1,0 +1,62 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var calculator = function(){
+                var num1 = "";
+                var num2 = "";
+                //accessing private variable num1
+                this.setNum1 = function(no1)
+                {
+                    num1 = no1;
+                }
+                this.getNum1 = function()
+                {
+                    return num1;
+                }
+                
+                //accessing private variable num2
+                this.setNum2 = function(no2)
+                {
+                    num2 = no2;
+                }
+                this.getNum2 = function()
+                {
+                    return num2;
+                }
+                
+                //all required funcitons are below
+                this.add = function( )
+                {
+                    return num1+num2;
+                }
+                
+                this.substract = function()
+                {
+                    return num1-num2;
+                }
+                this.multiply = function()
+                {
+                    return num1*num2;
+                }
+                this.divide = function()
+                {
+                    return num1/num2;
+                }
+            }
+            
+            var calc = new calculator();
+            
+            calc.setNum1(10);
+            calc.setNum2(5);
+            
+            
+            document.write("All possible calculation of  "+calc.getNum1()+" & "+calc.getNum2() + " are below <br>");
+            document.write("Addition: " + calc.add() + "<br>");
+            document.write("Substraction: " + calc.substract()+ "<br>");
+            document.write("Multiplication: " + calc.multiply()+ "<br>");
+            document.write("Divide :" + calc.divide()+ "<br>");
+             
+        </script>
+    </body>
+</html>

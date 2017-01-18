@@ -1,0 +1,31 @@
+<html>
+    <title>prototype_JS</title>
+    
+    <script>
+        function fullName(name)
+        {
+            this.name = name;
+            
+            //as many objects are created, that many functions are created as well. 
+            //for memory efficency, we use prototype.
+//            this.getName = function()
+//            {
+//                return this.name;
+//            }
+            
+        }
+        //benefit of using protype is that, even though many objects are created. there is only one function rendering everytime.
+        fullName.prototype.getName = function()
+            {
+                return this.name;
+            }
+        
+        var name1 = new fullName("Prajay");
+        var name2 = new fullName("Mr.Abid");
+        
+         document.write("FullName: " + name1.getName() + "<br>");
+         document.write("FullName: " + name2.getName()+ "<br>");
+        
+    </script>
+    
+</html>

@@ -1,0 +1,55 @@
+<html>
+    <title>private_members</title>
+    
+    <script>
+    function Employee(firstName, lastName)
+{
+    // Private Field
+    var privateFullName;
+
+    // Public Fields
+    this.firstName = firstName;
+    this.lastname = lastName;
+
+    // Private Function
+    var privateGetFullName = function ()
+    {
+        privateFullName = firstName + " " + lastName;
+        return privateFullName;
+    }
+
+    // Privileged Function
+    this.privilegedGetFullName = function ()
+    {
+        return privateGetFullName();
+    }
+
+    // Public Function
+    Employee.prototype.publicGetFullName = function ()
+    {
+        return this.privilegedGetFullName();
+    }
+}
+        
+        var employee = new Employee("Tom", "Grover");
+
+        // Calling public function works fine
+        document.write(employee.publicGetFullName() + "<br/>");
+
+        // Calling Privileged function works fine
+        document.write(employee.privilegedGetFullName() + "<br/>");
+
+        // Calling private method - undefined error
+        //employee.privateGetFullName();
+
+        // Calling private field - undefined error
+
+        employee.privateFullName = "ABC";
+        employee.publicGetFullName();
+        document.write(employee.privateFullName);
+
+    </script>
+    
+    
+    
+</html>

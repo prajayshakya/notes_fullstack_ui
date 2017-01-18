@@ -1,0 +1,25 @@
+<html>
+    <script type='application/javascript' src="overriding.js"> </script>
+        
+    <title>Overriding_in_js</title>
+    <script>
+        OveridingName();
+        
+        function OveridingName()
+        {
+            //overriding a function
+            fullName.prototype.getName = function()
+                {
+                        return this.name.toUpperCase();
+                }
+            
+            
+            var name1 = new fullName("Prajay");
+            var name2 = new fullName("Mr.Abid");
+        
+         document.write("FullName: " + name1.getName() + "<br>");
+         document.write("FullName: " + name2.getName()+ "<br>");
+        }
+    </script>
+   
+</html>

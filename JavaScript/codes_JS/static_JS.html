@@ -1,0 +1,49 @@
+<html>
+    <title>statics_member_JS</title>
+    
+    <script>
+        function circle(radius)
+        {
+            this.radius = radius;
+            circle.PI = 3.14;
+            
+            this.area = function()
+            {
+                return circle.PI * this.radius * this.radius;
+            }
+            
+            
+            
+        }
+        
+        var Circle = new circle(12);
+        document.write("Area: " + Circle.area());
+        
+    </script>
+    
+    <script>
+        document.write("<br>");
+        function Shape(shapeName)
+        {
+            // Instance field
+            this.ShapeName = shapeName;
+
+            // Static Field
+            Shape.Count = ++Shape.Count || 1;
+
+            // Static method
+            Shape.ShowCount = function ()
+            {
+                return Shape.Count;
+            }
+        }
+
+        var shape1 = new Shape("Circle");
+        var shape2 = new Shape("Rectangle");
+        var shape3 = new Shape("Triangle");
+
+        document.write("Shape.Count = " + Shape.ShowCount());
+
+    </script>
+    
+</html>

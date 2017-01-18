@@ -1,0 +1,33 @@
+<html>
+    <div>
+        Enter you name:
+        <br>
+        <input type = "text" id="yourName" size = "50">
+        <br><br>
+        <button onClick="setName()"> submit </button>
+        <button onClick="getName()"> Display </button>
+        <button onClick="removeName()"> remove </button>
+        
+        <script>
+            
+            function setName(){
+                var username = document.getElementById("yourName").value;
+                if(username === "") return false;
+                localStorage.setItem("name",username);
+                document.getElementById("yourName").value="Name saved";
+            }
+            
+            function getName(){
+                if(localStorage.getItem("name" === null) ) return false;
+                document.getElementById("yourName").value = "Named saved as: "+localStorage.getItem("name");
+            }
+            
+            function removeName(){
+                 if(localStorage.getItem("name" === null) ) return false;
+                    localStorage.removeItem("name");
+                    document.getElementById("yourName").value="Name removed";
+            }
+            
+        </script>
+    </div>
+</html>
