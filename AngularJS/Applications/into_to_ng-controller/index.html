@@ -1,0 +1,39 @@
+<html ng-app ="myApp">
+    <title>Into to ng-controller</title>
+    <head>
+        <script type='application/javascript'
+            src='/AngularJS/Applications/node_modules/angular/angular.js'></script>
+    </head>
+    
+    <body ng-controller='dayCountCtrl'>
+        <div ng-if = "hoursOfDay < 12" >
+            <p> Good Morning</p>
+        </div>
+        <div ng-if = "hoursOfDay > 12" >
+             Good Evening
+        </div>
+        <br>
+        <div>The Hours of a day by two way data-binding is: {{ hoursOfDay }}  </div>
+        <!--OR we can use ng-bind -->
+        
+        <div>hours of day by ng-bind is: <span ng-bind='hoursOfDay'></span></div>
+        
+        <!--instead of using ng-init we can use controller for business logics -->
+        <script>
+            var module = angular.module('myApp',[]);
+            
+            module.controller('dayCountCtrl', dayCount);
+            
+            function dayCount($scope){
+                $scope.hoursOfDay = 18;
+                console.log('controller is working');
+                
+            }
+        </script>
+        
+        
+    </body>
+    
+    <script type='application/javascript'
+            src='/AngularJS/Applications/node_modules/angular/angular.js'></script>
+</html>

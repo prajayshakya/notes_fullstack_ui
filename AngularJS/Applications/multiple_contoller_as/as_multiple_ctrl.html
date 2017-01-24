@@ -1,0 +1,20 @@
+<html ng-app='myApp'>
+    
+    <!-- We can access individual controller via allias -->
+    
+    <title>multiple_ctrl</title>
+    <head>
+        <script type ='text/javascript' src='/AngularJS/Applications/node_modules/angular/angular.js'></script>
+        
+        <script type='text/javascript' src='/AngularJS/Applications/multiple_contoller_as/multiple_ctlr.js'></script>
+    </head>
+    <h3>Nested controller app</h3>
+    <div ng-controller ='ctrl1 as c1'>
+        <p ng-bind="c1.message"> </p>
+       
+    <div ng-controller ='ctrl2 as c2'>   
+        <p ng-bind="c2.message"> </p>
+    </div>     
+    </div>
+</html>
+

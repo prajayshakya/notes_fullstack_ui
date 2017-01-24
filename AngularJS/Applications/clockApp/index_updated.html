@@ -1,0 +1,34 @@
+<html ng-app='myApp'>
+    <title>clock_updated_with_buttons</title>
+   
+    <div ng-controller='clockCtrl'>
+        <h3>Clock App</h3>
+        Todays Date is <span> {{ presentDate }} </span>
+        <br>
+        <br>
+        Todays Time is <span> {{ currentTime }} </span>
+        <hr>
+        <button ng-click="updateClock()"> update_Clock</button>
+        
+        <br><br><br><hr>
+        <!-- two way binding -->
+        <input type='text' placeholder="Enter your Name" ng-model='userName'>
+        <br>
+        <p>Select the correct option</p>
+        <input type='radio' value='opt1' ng-model='radio'>option1
+        <input type='radio' value='opt2' ng-model='radio'>option2
+        <input type='radio' value='opt3' ng-model='radio'>option3
+        <br>
+        Date <input type='date'ng-model='date'>
+        <br>
+        <hr>
+        <h3>Summary</h3>
+        <p>User Name that you entered is {{userName}}</p>
+        <p>Correct option is {{ radio }} </p>
+        <p>Date --> {{ date }}</p>
+    </div>
+    
+    <script type='application/javascript' src='/AngularJS/Applications/node_modules/angular/angular.js'></script>
+    
+    <script type='application/javascript' src='/AngularJS/Applications/clockApp/clock.js'></script>
+</html>
