@@ -1,0 +1,27 @@
+<html ng-app="myApp"> 
+    
+    <script type='application/javascript' src='/AngularJS/Applications/node_modules/angular/angular.js'></script>
+    <script type='application/javascript' src='/AngularJS/Applications/ng-show_if_repeat/index_js.js'></script>
+    
+    <title>ng-show/ng-if/ng-repeat</title>
+    
+    <div ng-controller="showCtrl as cc">
+        <h3> Example of ng-show/ ng-if/ ng-repeat</h3>
+        <p>Select the checkbox</p>
+        <input type='checkbox' ng-model = "cc.checked">
+        
+        <p ng-show="cc.checked"> Using properties of ng-show/hide</p>
+        <p ng-if="cc.checked"> Using properties of ng-if</p>
+        
+        <!--only difference between ng-show/ ng-if is ng-if completely removes the contents from DOM. where as ng-show/hide just hides the display-->
+        
+        <div ng-if="cc.checked" ng-repeat="obj in cc.myList">
+        <p> Element: {{$index }}</p>
+        <p> Name: {{ obj.name }}</p>
+        <p> City: {{ obj.city }} </p>
+            <hr>
+        </div>
+    </div>
+    
+    
+</html>

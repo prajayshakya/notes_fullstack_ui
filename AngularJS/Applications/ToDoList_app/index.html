@@ -1,0 +1,29 @@
+<html ng-app='myApp'>
+    <title>toDoList App</title>
+    <h3> To Do List Application </h3>
+    
+    <div ng-controller="myCtrl as obj">
+        
+        <input type='text' placeholder="Enter to do list" ng-model = obj.itemsEnter> 
+        
+        <button ng-click="obj.addItems()">Add items</button>
+        <p><button ng-hide="obj.editMode" ng-click="obj.editItems()">Edit items</button></p>
+        <p><button ng-show="obj.editMode" ng-click="obj.editItems()">Done</button></p>
+        
+        <p> Your To do list :</p>
+        <ol>
+            <li ng-repeat= "cc in obj.itemList track by $index">
+                <span ng-hide = "obj.editMode" ng-bind="cc"></span>
+                <span><input ng-show="obj.editMode" ng-model="cc" type=text></span> 
+                
+                <button ng-click="obj.deleteItems($index)">delete</button>
+            </li>
+        </ol>
+        
+        <!-- testing-->
+<!--        {{ cc.itemsEnter }}-->
+    </div>
+    
+    <script type='application/javascript' src='/AngularJS/Applications/node_modules/angular/angular.js'></script>
+    <script type='application/javascript' src='/AngularJS/Applications/ToDoList_app/module1.js'></script>
+</html>

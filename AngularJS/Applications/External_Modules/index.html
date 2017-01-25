@@ -1,0 +1,27 @@
+<html ng-app='myApp'>
+    
+        <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
+    
+    
+    <script type='application/javascript' src='/AngularJS/Applications/node_modules/angular/angular.js'></script>
+    <script type='application/javascript' src='/AngularJS/Applications/External_Modules/module1.js'></script>
+    <script type='application/javascript' src='/AngularJS/Applications/External_Modules/module2.js'></script>
+    
+        <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
+    
+    
+    
+    <title>Adding_External Modules</title>
+    
+    <h3> using External Modules</h3>
+    <div ng-controller="ctrl1 as cc">
+        {{ cc.message }}
+    </div>
+    
+    <div ng-controller = "DemoCtrl as dc">
+        <tags-input ng-model="dc.tags"></tags-input>
+        <p>Model: {{dc.tags}}</p>
+    </div>
+    
+    
+</html>
