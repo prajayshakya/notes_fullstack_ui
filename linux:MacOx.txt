@@ -2,7 +2,9 @@ some unix/ MacOS X commands
 
 ls  ----view all directory
 
-ls -l  ---view directory in list
+ls -l  ---view directory in list.
+
+ls -lah  - - - View the size of the file.
 
 clear  ---clears everything
 
